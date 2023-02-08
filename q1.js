@@ -4,10 +4,9 @@
 
 
 
-const Person = function(firstName,lastName,age){
-    this.firstName = firstName,
-    this.lastName = lastName,
-    this.age = age
+let Person = {
+    firstName : 'Kratika',
+    lastName : 'Singhal',
+    age : 21
 };
 
-const person1 = new Person("Kratika","Singhal",21);

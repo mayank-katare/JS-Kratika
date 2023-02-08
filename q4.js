@@ -6,28 +6,19 @@
 // d Takes as an input to construct an array of numbers
 // e Define another constructor function (SortObjectArray) which extends SortArray, and is used to sort array of JSON object
 
-
-
-class SortArray{
-    constructor(array){
-        this.array = array;
-    }
-    getSortedArray(){
-        this.array.sort(function(a, b){return a-b});
-        return this.array;
-    }
-    #sortArray(){
-        this.array.sort(function(a, b){return a-b});
-        return this.array;
+function SortArray(array){
+    this.originalArray = array;
+    this.getSortedArray = sortArray();
+    var sortArray = ()=>{
+        this.originalArray.sort(function(a, b){return a-b});
+        return this.originalArray;
     }
 }
 
-class SortObjectArray extends SortArray{
-    constructor(array,obj){
-        super(array);
-        this.sarray = obj;
-    }
-    sortjsonArray(){
+function SortObjectArray(array,obj){
+    SortArray.call(this,array);
+    this.sarray = obj;
+    this.sortjsonArray = ()=>{
         const arr = Object.values(this.sarray);
         arr.sort(function(a, b){return a-b});
         return arr;

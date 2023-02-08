@@ -26,21 +26,19 @@
 // }
 
 
-
-
-var result = function(arr,key){
-    var re = {};
+const groupObjectsBy = function(arr,key){
+    let resulted_array = {};
     arr.forEach((obj) => {
         if(obj.hasOwnProperty(key)){
-            if(!re.hasOwnProperty(obj[key])){
-                re[obj[key]] = [];
+            if(!resulted_array.hasOwnProperty(obj[key])){
+              resulted_array[obj[key]] = [];
             }
-            re[obj[key]].push(obj);
+            resulted_array[obj[key]].push(obj);
         }
 });
-return re;
+return resulted_array;
 };
-console.log(result([
+console.log(groupObjectsBy([
     {
     "channel": "A",
     "name": "shoe"
