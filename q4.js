@@ -29,3 +29,4 @@ const array = [1,2,3,4,5];
 const sortarray = new SortArray(array);
 const obj = {key1: 56,key2: 67,key3: 23,key4: 11,key5: 88};
 const sortObjectArray = new SortObjectArray(array,obj);
+//completed
